@@ -1,0 +1,5 @@
+SW56_G610:admin> cfgshow
+Defined configuration:
+
+Effective configuration:
+No Effective configuration: (No Access)
