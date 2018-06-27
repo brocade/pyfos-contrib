@@ -18,7 +18,7 @@
 
 :mod:`zoning_hanging_zone_find` - PyFOS util for misc use case.
 ***********************************************************************************
-The :mod:`zonign_hanging_zone_find` provides for misc use case.
+The :mod:`zoning_hanging_zone_find` provides for misc use case.
 
 This module is a stand-alone script that can be used to display zones
 containing no online devices. The script also gives an option to delete
@@ -84,8 +84,8 @@ def online_in_name_server_by_alias(current_defined, ns_attributes, device_alias)
                     if online_in_name_server_by_wwn(ns_attributes, alias_entry_name):
                         return True
                 elif isDCommaI(alias_entry_name):
-                    #need to add code for D,I
-                    return False
+                    if online_in_name_server_by_dcommai(ns_attributes, alias_entry_name):
+                        return True
 
     return False
 
@@ -124,8 +124,7 @@ filtered_zone_prefixes = [
 
 filtered_cfg_names = [
     "t_r_a_f_f_i_c_i_s_o_c__fg",
-    "m_u_l_t_i_r_e_d_i_r__cfg",
-    "r_e_d_i_r_c__fg"
+    "m_u_l_t_i_r_e_d_i_r__cfg"
     ]
 
 filtered_cfg_prefixes = [
@@ -262,7 +261,7 @@ def main(argv):
             print(zone)
     else:
         print(" ")
-        print("zones with at least one online device or special zones")
+        print("no zones with at least one online device or special zones")
 
     if len(hanging_zones) is not 0:
         print("")
