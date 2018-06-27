@@ -10,3 +10,5 @@ bulkZoning - Contains the output of sample runs of the bulk_zoning utility
 VMaxDrivenZoning- A set of scripts to build SAN zones driven by VMax arrays
 
 PureDrivenZoning- A set of scripts to build SAN zones driven by Pure arrays
+
+ZoningHangingZoneCleanup - A script to display and delete Zones without online devices
